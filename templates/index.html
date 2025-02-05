@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Asistente de Matemáticas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <h1>Asistente de Matemáticas</h1>
+
+  <div>
+    <label>Operación:</label>
+    <select id="operacion">
+      <option value="resolver_ecuacion">Resolver Ecuación</option>
+      <option value="derivada">Derivada</option>
+      <option value="integral">Integral</option>
+      <option value="simplificar">Simplificar</option>
+      <option value="factorizar">Factorizar</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Expresión/Ecuación:</label>
+    <input type="text" id="expresion" placeholder="Ej: x^2 + 2*x - 3 = 0" />
+  </div>
+
+  <div>
+    <label>Variable:</label>
+    <input type="text" id="variable" value="x" />
+  </div>
+
+  <button onclick="enviarSolicitud()">Calcular</button>
+
+  <h2>Resultado:</h2>
+  <div id="resultado"></div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
