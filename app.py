@@ -6,6 +6,7 @@ from asistente_backend import (
     simplificar_expresion,
     factorizar_expresion
 )
+import os
 
 app = Flask(__name__)
 
@@ -40,4 +41,4 @@ def calcular():
 
 if __name__ == "__main__":
     # Ejecutar la app en modo desarrollo en http://localhost:5000
-    app.run(debug=True)
+    app.run(debug=True, port=os.getenv("PORT", 5000))   
